@@ -22,7 +22,7 @@ function ContactList({ contacts, onDeleteContact }) {
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
