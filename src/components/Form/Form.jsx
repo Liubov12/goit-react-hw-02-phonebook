@@ -16,8 +16,6 @@ class Form extends Component {
   };
 
   handleSubmit = e => {
-    // e.preventDefault();
-
     this.props.onSubmit(this.state);
     this.setState({ name: '', value: '' });
   };
@@ -32,7 +30,7 @@ class Form extends Component {
 
     return (
       <form className={s.form} onSubmit={this.handleSubmit}>
-        <label className={s.label} htmlFor={this.nameInputId}>
+        <label className={s.label}>
           Name
           <input
             className={s.input}
@@ -43,11 +41,10 @@ class Form extends Component {
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             placeholder="Ivan Ivanov"
-            // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
         </label>
-        <label className={s.label} htmlFor={this.telInputId}>
+        <label className={s.label}>
           Number
           <input
             className={s.input}
